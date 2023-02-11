@@ -1,23 +1,25 @@
-import logo from "./logo.svg";
-import "./App.css";
+//local page import
+import Navi from './tool/Navi';
+import Introduce from './page/introduce/introduce';
+//bootstrap import
+
+//hook import
+import {Route, Routes, useNavigate} from 'react-router-dom';
+
+//style import
+import './App.css';
 
 function App() {
+
+  let navigate = useNavigate();
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          bj test
-        </a>
-      </header>
+      <Navi></Navi>
+      <Routes>
+        <Route path='/introduce' element={<Introduce/>} />
+      </Routes>
+
     </div>
   );
 }

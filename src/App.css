@@ -36,3 +36,13 @@
     transform: rotate(360deg);
   }
 }
+.scroll-text {
+  font-size: 5rem;
+  transition: 1.5s;
+}
+
+.scrolled-text {
+  font-size: 5rem;
+  color: red;
+  transition: 1.5s;
+}
