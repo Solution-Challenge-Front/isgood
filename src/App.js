@@ -19,8 +19,14 @@ function App() {
       <Routes>
         <Route path='/introduce' element={<Introduce/>} />
       </Routes>
-
+    
+      <footer className="py-3 my-4">
+        <hr/>
+        <p className="text-center text-muted">© 2022 Company, Inc</p>
+      </footer>
     </div>
+
+    
   );
 }
 
