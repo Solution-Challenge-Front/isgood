@@ -1,0 +1,41 @@
+.login_container{
+    width: 70%;
+    margin-left: 15%;
+    margin-top: 30px;
+    box-shadow: 1px 1px 5px 1px #dadce0 ;
+    padding-bottom: 30px;
+}
+
+.panel{
+    display: flex;
+    flex-direction: column;
+    margin-top: 30px;
+}
+
+.panel > h2{
+    margin-top: 30px;
+}
+
+.select{
+    
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.select > div{
+    position: relative;
+    width: 40%;
+    height: 500px;
+    border: 1px solid rgb(202, 202, 202);
+    border-radius: 7px;
+}
+
+.select > div > button{
+    position: absolute;
+    bottom: 5%;
+    display: block;
+    margin-left: 25%;
+    width: 50%;
+    height: 50px;
+}

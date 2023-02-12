@@ -8,9 +8,13 @@ function Navi(){
                 <Container>
                     <Navbar.Brand href="#home">Idea Connection</Navbar.Brand>
                     <Nav>
-                        <Nav.Link href="#home">Menu1</Nav.Link>
-                        <Nav.Link href="#features">Menu2</Nav.Link>
-                        <Nav.Link href="#pricing">Menu3</Nav.Link>
+                        <Nav.Link href="/introduce">Introduce</Nav.Link>
+                        <Nav.Link href="#">Menu2</Nav.Link>
+                        <Nav.Link href="#">Menu3</Nav.Link>
+                    </Nav>
+                    <Nav>
+                        <Nav.Link href="#">Login</Nav.Link>
+                        <Nav.Link href="/signupselect">Sing up</Nav.Link>
                     </Nav>
                 </Container>
             </Navbar>
