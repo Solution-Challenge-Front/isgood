@@ -6,7 +6,7 @@ function Navi(){
         <div>
             <Navbar id="nav" bg="ligth" variant="ligth">
                 <Container>
-                    <Navbar.Brand href="#home">Idea Connection</Navbar.Brand>
+                    <Navbar.Brand href="/">Idea Connection</Navbar.Brand>
                     <Nav>
                         <Nav.Link href="/introduce">Introduce</Nav.Link>
                         <Nav.Link href="#">Menu2</Nav.Link>

@@ -1,0 +1,51 @@
+//<-- main
+.main-wrap {
+}
+
+.main-wrap .main-wrap-header {
+  text-align: left;
+  margin-top: 80px;
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: 0.1px;
+  color: #23A6F0;
+}
+
+.main-wrap .main-wrap-headline {
+  text-align: left;
+  margin-top: 35px;
+  font-weight: 700;
+  font-size: 58px;
+  line-height: 80px;
+  letter-spacing: 0.2px;
+}
+
+.main-wrap .main-wrap-btns {
+  text-align: left;
+  margin-top: 35px;
+  
+}
+.main-wrap .main-wrap-btns button {
+  width: 133px;
+  height: 52px;
+}
+.main-wrap .main-wrap-btns .main-btns-join {
+  background-color: #23A6F0;
+  color: #fff;
+  border-radius: 5px;
+  margin-right: 10px;
+  border: none;
+}
+
+.main-wrap .main-wrap-btns .main-btns-learn {
+  border-radius: 5px;
+  color: #23A6F0;
+  background: #fff;
+  border: 1px solid #23A6F0;
+}
+
+// main-->
+
+#main-img {
+  color: #999;
+}
