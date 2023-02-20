@@ -80,6 +80,18 @@ function Profile() {
             Add a short bio...
           </textarea>
         </div>
+        <div className="email">
+          <div className="youEmail">
+            <p>Alternative contact email</p>
+            <p>Enter an alternative email if you'd like to be</p>
+            <p>contacted via a different email</p>
+          </div>
+          <input
+            onChange={(e) => {
+              console.log(e.target.value);
+            }}
+          />
+        </div>
       </div>
     </div>
   );

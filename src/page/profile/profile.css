@@ -2,6 +2,7 @@
   width: 75%;
   margin: auto;
   margin-top: 100px;
+  font-weight: bold;
 }
 
 .profileHead {
@@ -40,7 +41,7 @@
 }
 .userName > p {
   text-align: left;
-  width: 320px;
+  width: 350px;
 }
 .userName > div {
   width: 50px;
@@ -57,7 +58,7 @@
 }
 .phoneNum > p {
   text-align: left;
-  width: 320px;
+  width: 350px;
 }
 .phoneNum > select {
   margin-right: 10px;
@@ -74,7 +75,7 @@
 }
 .yourPhoto > div {
   text-align: left;
-  width: 320px;
+  width: 350px;
 }
 .yourPhoto > img {
   width: 100px;
@@ -95,5 +96,21 @@
 
 .youtBio > div {
   text-align: left;
-  width: 320px;
+  width: 350px;
+}
+
+.email {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 30px;
+}
+.email > div {
+  text-align: left;
+  width: 350px;
+}
+.email > input {
+  margin-top: 45px;
+  margin-right: 10px;
+  height: 30px;
+  width: 600px;
 }
