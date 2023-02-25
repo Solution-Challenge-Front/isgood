@@ -13,7 +13,7 @@ function Navi(){
                         <Nav.Link href="#">Menu3</Nav.Link>
                     </Nav>
                     <Nav>
-                        <Nav.Link href="#">Login</Nav.Link>
+                        <Nav.Link href="/login">Login</Nav.Link>
                         <Nav.Link href="/signupselect">Sing up</Nav.Link>
                     </Nav>
                 </Container>

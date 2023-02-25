@@ -4,6 +4,7 @@ import Introduce from './page/introduce/introduce';
 import SignupSelect from './page/Signup/SignupSelect.js';
 import Signup1 from './page/Signup/Signup1';
 import Signup2 from './page/Signup/Signup2';
+import Login from './page/Login/Login';
 //bootstrap import
 
 //hook import
@@ -24,6 +25,7 @@ function App() {
         <Route path='/signupselect' element={<SignupSelect/>} />
         <Route path='/signup1' element={<Signup1/>} />
         <Route path='/signup2' element={<Signup2/>} />
+        <Route path='/login' element={<Login/>} />
       </Routes>
     
       <footer className="py-3 my-4">
