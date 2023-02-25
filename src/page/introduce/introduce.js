@@ -13,11 +13,12 @@ function Introduce() {
     },[])
     return (
         <div className="introduce_main">
-            <h2>Welcome Idea Connect</h2>
+            
+            <Introduce4/>
             <Introduce1/>
             <Introduce2/>
             <Introduce3/>
-            <Introduce4/>
+            
         </div>
     );
 }

@@ -6,12 +6,11 @@ function Introduce3(){
             <div className="animation" data-aos="fade-up">
                 <div className='introduce_container'>
                     <div className='int1_text'>
-                        <h2 className='int1_title'>Share your ideas!</h2>
-                        <p>Register your idea as a Spike registrant and bring your idea to life with backers!</p>
+                        <h2 className='int1_title'>Discuss common topics!</h2>
+                        <h3>A common discussion topic is selected for each week! Share your thoughts on the topic with others and get selected as an Idea of ​​the Week!</h3>
                     </div>
                     <div className='int1_img_container'>
-                        <div className='int1_img'>
-                            사진
+                        <div className='int3_img'>
                         </div>
                     </div>
                 </div>
