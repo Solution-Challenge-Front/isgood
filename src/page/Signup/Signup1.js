@@ -10,7 +10,7 @@ function Signup1(){
     let navigate = useNavigate();
     return(
         <div className='signup1_main'>
-            <div className='login_container'>
+            <div className='signup_container'>
                 <Container className="panel">
                     <h2>아이디어 등록자</h2>
                     <br/>

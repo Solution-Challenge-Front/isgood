@@ -2,6 +2,7 @@
 import {useNavigate} from 'react-router-dom';
 import {Button, Container, Form, Col, Row } from 'react-bootstrap'
 import { useState } from 'react';
+import './Login.css'
 
 function Login(){
 
@@ -11,7 +12,7 @@ function Login(){
     return(
         <div className='login_main'>
             <div className='login_container'>
-                <Container className="panel">
+                <Container className="login_panel">
                     <h2>로그인</h2>
                     <br/>
                     <Form.Group as={Row} className="mb-3">
@@ -30,6 +31,7 @@ function Login(){
                             }} />
                         </Col>
                     </Form.Group>
+                    <Button variant="secondary" className='Login_button'>Login</Button>
                 </Container>
             </div>
         </div>

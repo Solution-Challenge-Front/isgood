@@ -5,8 +5,8 @@ import {Button, Container } from 'react-bootstrap'
 function SignupSelect(){
     let navigate = useNavigate();
     return(
-        <div className='login_main'>
-            <div className='login_container'>
+        <div className='signup_main'>
+            <div className='signup_container'>
                 <Container className="panel">
                     <h2>활동 유형을 선택해 주세요</h2>
                     <br/>
