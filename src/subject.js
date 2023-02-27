@@ -1,4 +1,4 @@
-subject = [
+let subject = [
   {
     id: 0,
     name: "전체",
@@ -28,3 +28,5 @@ subject = [
     name: "토론게시판",
   },
 ];
+
+export default subject;
