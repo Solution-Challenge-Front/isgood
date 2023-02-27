@@ -19,6 +19,7 @@ a {
   float: left;
   z-index: 1000;
   will-change: min-height;
+  margin-right: 30px;
 }
 .sidebar-content-wrap {
   position: static;
@@ -39,4 +40,12 @@ a {
 }
 .sidebar-menu-item > a {
   padding: 8px 12px 7px;
+}
+.post {
+  width: 700px;
+  margin-top: 20px;
+  padding-left: 10px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  box-shadow: 1px 1px 3px 1px #dadce0;
 }
