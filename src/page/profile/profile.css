@@ -3,12 +3,16 @@
   margin: auto;
   margin-top: 100px;
   font-weight: bold;
+  padding: 1.5rem;
+  box-shadow: 1px 1px 3px 1px #dadce0;
 }
 
 .profileHead {
   display: flex;
   flex-direction: row;
   margin-bottom: 40px;
+  padding: 1.5rem;
+  box-shadow: 1px 1px 3px 1px #dadce0;  
 }
 .headPic {
   width: 200px;
@@ -16,12 +20,14 @@
   border-radius: 70%;
   overflow: hidden;
   margin-right: 20px;
+  
 }
 .headContext {
   display: flex;
   flex-direction: column;
   margin-top: 40px;
   text-align: left;
+  
 }
 .headContext > h3 {
   font-weight: bold;
@@ -33,11 +39,14 @@
 .profileContanier {
   display: flex;
   flex-direction: column;
+  
 }
 .userName {
   display: flex;
   flex-direction: row;
   margin-bottom: 30px;
+  padding: 1.5rem;
+  box-shadow: 1px 1px 3px 1px #dadce0;
 }
 .userName > p {
   text-align: left;
@@ -55,6 +64,8 @@
   display: flex;
   flex-direction: row;
   margin-bottom: 30px;
+  padding: 1.5rem;
+  box-shadow: 1px 1px 3px 1px #dadce0;
 }
 .phoneNum > p {
   text-align: left;
@@ -72,6 +83,8 @@
   display: flex;
   flex-direction: row;
   margin-bottom: 30px;
+  padding: 1.5rem;
+  box-shadow: 1px 1px 3px 1px #dadce0;
 }
 .yourPhoto > div {
   text-align: left;
@@ -92,6 +105,8 @@
   display: flex;
   flex-direction: row;
   margin-bottom: 30px;
+  padding: 1.5rem;
+  box-shadow: 1px 1px 3px 1px #dadce0;
 }
 
 .youtBio > div {
@@ -103,6 +118,8 @@
   display: flex;
   flex-direction: row;
   margin-bottom: 30px;
+  padding: 1.5rem;
+  box-shadow: 1px 1px 3px 1px #dadce0;  
 }
 .email > div {
   text-align: left;
