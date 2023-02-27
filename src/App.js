@@ -7,6 +7,7 @@ import Signup1 from './page/Signup/Signup1';
 import Signup2 from './page/Signup/Signup2';
 import Profile from "./page/profile/profile";
 import Login from "./page/Login/Login";
+import Posts from "./page/Posts/posts.js";
 //bootstrap import
 
 //hook import
@@ -29,6 +30,12 @@ function App() {
         <Route path='/signup2' element={<Signup2/>} />
         <Route path='/login' element={<Login/>} />
         <Route path='/profile' element={<Profile/>} />
+        <Route path="/introduce" element={<Introduce />} />
+        <Route path="/signupselect" element={<SignupSelect />} />
+        <Route path="/signup1" element={<Signup1 />} />
+        <Route path="/signup2" element={<Signup2 />} />
+        <Route path="/profile" element={<Profile />} />
+        <Route path="/posts" element={<Posts />} />
       </Routes>
 
       <footer className="py-3 my-4">

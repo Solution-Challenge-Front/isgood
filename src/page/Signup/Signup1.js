@@ -2,14 +2,20 @@ import './Signup.css';
 import {useNavigate} from 'react-router-dom';
 import {Button, Container, Form, Col, Row } from 'react-bootstrap'
 import { useState } from 'react';
+import React, { useEffect } from "react";
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 function Signup1(){
     let[nickname, get_nickname] = useState('');
     let[id, get_id] = useState('');
     let[password, get_password] = useState('');
     let navigate = useNavigate();
+    useEffect(()=>{
+        AOS.init({duration: 2000});
+    },[])
     return(
-        <div className='signup1_main'>
+        <div className='signup1_main' data-aos="fade-up">
             <div className='signup_container'>
                 <Container className="panel">
                     <h2>아이디어 등록자</h2>

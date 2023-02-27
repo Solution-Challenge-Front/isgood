@@ -1,16 +1,21 @@
 
 import {useNavigate} from 'react-router-dom';
+import React, { useEffect } from "react";
 import {Button, Container, Form, Col, Row } from 'react-bootstrap'
 import { useState } from 'react';
 import './Login.css'
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 function Login(){
 
     let[id, get_id] = useState('');
     let[password, get_password] = useState('');
-
+    useEffect(()=>{
+        AOS.init({duration: 2000});
+    },[])
     return(
-        <div className='login_main'>
+        <div className='login_main' data-aos="fade-up">
             <div className='login_container'>
                 <Container className="login_panel">
                     <h2>로그인</h2>
