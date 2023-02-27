@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import "./profile.css";
 import "../../App.css";
+
 function Profile() {
   return (
     <div className="profile">
