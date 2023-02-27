@@ -12,12 +12,12 @@ function Signup2(){
         AOS.init({duration: 2000});
     },[])
     return(
-        <div className='signup2_main' data-aos="fade-up">
+        <div className='signup1_main' data-aos="fade-up">
             <div className='signup_container'>
                 <Container className="panel">
                     <h2>아이디어 이용자</h2>
                     <br/>
-                    
+                    <Button variant="secondary" className='signup_button'>Sign up</Button>
                 </Container>
             </div>
         </div>

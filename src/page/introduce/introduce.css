@@ -57,3 +57,17 @@
   background-position: center;
 }
 
+.int4_buttonbox{
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top: 30%;
+}
+
+.int4_buttonbox > button{
+  position: relative;
+  width: 150px;
+  height: 40px;
+  
+}

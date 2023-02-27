@@ -11,8 +11,8 @@ function SignupSelect(){
         AOS.init({duration: 2000});
     },[])
     return(
-        <div className='signup_main' data-aos="fade-up">
-            <div className='signup_container'>
+        <div className='signupselect_main' data-aos="fade-up">
+            <div className='signupselect_container'>
                 <Container className="panel">
                     <h2>활동 유형을 선택해 주세요</h2>
                     <br/>

@@ -44,6 +44,7 @@ function Signup1(){
                             }} />
                         </Col>
                     </Form.Group>
+                    <Button variant="secondary" className='signup_button'>Sign up</Button>
                 </Container>
             </div>
         </div>
