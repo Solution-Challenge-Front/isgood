@@ -11,6 +11,7 @@ function Login(){
 
     let[id, get_id] = useState('');
     let[password, get_password] = useState('');
+    let navigate = useNavigate();
     useEffect(()=>{
         AOS.init({duration: 2000});
     },[])
@@ -37,6 +38,7 @@ function Login(){
                         </Col>
                     </Form.Group>
                     <Button variant="secondary" className='Login_button'>Login</Button>
+                    <Button onClick={()=>{ navigate('/login_google') }} variant="secondary" className='Login_button'>googleLogin</Button>
                 </Container>
             </div>
         </div>
