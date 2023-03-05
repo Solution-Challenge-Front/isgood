@@ -1,5 +1,6 @@
 import './main.css';
 import { useNavigate } from 'react-router-dom';
+import axios from 'axios';
 
 function MainPage() {
   let navigate = useNavigate();

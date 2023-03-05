@@ -38,18 +38,7 @@ function App() {
         <Route path="/profile" element={<Profile />} />
         <Route path="/introduce" element={<Introduce />} />
         <Route path="/signupselect" element={<SignupSelect />} />
-        <Route path="/signup1" element={<Signup1 />} />
-        <Route path="/signup2" element={<Signup2 />} />
-        <Route path="/profile" element={<Profile />} />
         <Route path="/posts/:id" element={<Posts />} />
-        <Route path="/" element={<MainPage />} />
-        <Route path="/introduce" element={<Introduce />} />
-        <Route path="/signupselect" element={<SignupSelect />} />
-        <Route path="/signup1" element={<Signup1 />} />
-        <Route path="/signup2" element={<Signup2 />} />
-        <Route path="/login" element={<Login />} />
-        <Route path="/profile" element={<Profile />} />
-        <Route path="/posts" element={<Posts />} />
         <Route path="/idea_list" element={<Posts />} />
         <Route path="/posts_create" element={<PostCreate />} />
         <Route path="/posts_update" element={<PostCreate />} />
