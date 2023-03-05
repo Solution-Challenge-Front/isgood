@@ -1,14 +1,17 @@
 .signup1_main{
-    height: 650px;
+    width: auto;
+    display: block;
+    height: auto;
     position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .signup_container{
     width: 50%;
-    position: absolute;
-    top: 50%;
+    top: 10%;
     left: 50%;
-    transform: translate(-50%, -50%);
     box-shadow: 1px 1px 5px 1px #dadce0 ;
 }
 
