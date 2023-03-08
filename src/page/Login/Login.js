@@ -6,6 +6,8 @@ import { useState } from 'react';
 import './Login.css'
 import AOS from 'aos';
 import 'aos/dist/aos.css';
+import axios from 'axios';
+import { setCookie, getCookie, removeCookie } from '../../util/Cookie';
 
 function Login(){
 
@@ -37,7 +39,50 @@ function Login(){
                             }} />
                         </Col>
                     </Form.Group>
-                    <Button variant="secondary" className='Login_button'>Login</Button>
+                    <Button variant="secondary" className='Login_button'
+                        onClick={() => {
+                            axios.post(`${process.env.REACT_APP_API_KEY}/auth/login`, {
+                                id: id,
+                                pw: password
+                            })
+                                .then((result) => {
+                                    if (result.status === 201) {
+                                        setCookie("token", result.data.jwt, {
+                                            path: "/",
+                                        })
+                                        axios.post(`${process.env.REACT_APP_API_KEY}/auth/check`,
+                                            {
+                                            pw: password
+                                            },
+                                            {
+                                                headers: {
+                                                    Authorization: getCookie("token"),
+                                                }
+                                            }
+                                        ).then((result) => {
+                                            if (result.data.statusCode === 201) {
+                                                alert(result.data.message)
+                                                navigate('/')
+                                            }
+                                        }).catch((err) => {
+                                            if (err.data.statusCode === 400) {
+                                                alert(err.data.message)
+                                            } else if (err.data.statusCode === 501) {
+                                                alert(err.data.message)
+                                            }
+                                        })
+                                    }
+                                }).catch((err) => {
+                                    if (err.status === 401) {
+                                        alert(err.data.message)
+                                    } else if (err.status === 500) {
+                                        alert(err.data.message)
+                                    }
+                            })
+                        }}
+                    >
+                        Login
+                    </Button>
                     <Button onClick={()=>{ navigate('/login_google') }} variant="secondary" className='Login_button'>googleLogin</Button>
                 </Container>
             </div>

@@ -14,7 +14,7 @@ function Signup1(){
     let [name, get_name] = useState('');
     let [nation, get_nation] = useState('');
     let [email, get_email] = useState('');
-    let [phone, get_phone] = useState('');
+    let [phone, get_phone] = useState(0);
 
     let navigate = useNavigate();
     useEffect(()=>{
@@ -84,18 +84,27 @@ function Signup1(){
                     </Form.Group>
                     <Button variant="secondary" className='signup_button'
                         onClick={() => {
-                            axios.post('http://35.216.65.169:8080/auth/join', {
+                            axios.post(`${process.env.REACT_APP_API_KEY}/auth/join`, {
                                 common: true,
                                 id: id,
                                 pw: password,
                                 name: name,
                                 nation: nation,
                                 email: email,
-                                phone: phone,
+                                phone: Number(phone),
                                 nickname: nickname
                             })
                                 .then((result) => {
-                                console.log(result)
+                                    if (result.status === 201) {
+                                        alert(result.message)
+                                        navigate('/')
+                                }
+                                }).catch((result) => {
+                                    if (result.status === 401) {
+                                    alert("ID 중복입니다.")
+                                    } else if (result.status === 500) {
+                                        alert(result.error)
+                                }
                             })
                     }}
                     >
