@@ -9,7 +9,7 @@ import Profile from "./page/profile/profile";
 import Login from "./page/Login/Login";
 import Posts from "./page/Posts/posts.js";
 import LoginGoogle from "./page/Login/google_oauth/oauth_login";
-
+import Chat from "./page/ChatTest/chat.js";
 import subject from "./subject.js";
 
 import PostCreate from "./page/Posts/posts_create.js";
@@ -45,6 +45,7 @@ function App() {
         <Route path="/posts_update" element={<PostCreate />} />
         <Route path="/posts_detail" element={<PostDetail />} />
         <Route path="/login_google" element={<LoginGoogle />} />
+        <Route path="/chat" element={<Chat />} />
       </Routes>
 
       <footer className="py-3 my-4">
