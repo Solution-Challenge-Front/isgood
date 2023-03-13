@@ -96,7 +96,7 @@ function Signup1(){
                             })
                                 .then((result) => {
                                     if (result.status === 201) {
-                                        alert(result.message)
+                                        alert(result.data.message)
                                         navigate('/')
                                 }
                                 }).catch((result) => {

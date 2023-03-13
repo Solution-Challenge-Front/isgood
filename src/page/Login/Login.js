@@ -46,37 +46,22 @@ function Login(){
                                 pw: password
                             })
                                 .then((result) => {
-                                    if (result.status === 201) {
+                                    const statusCode = result.status;
+
+                                    if (statusCode === 201) {
                                         setCookie("token", result.data.jwt, {
                                             path: "/",
                                         })
-                                        axios.post(`${process.env.REACT_APP_API_KEY}/auth/check`,
-                                            {
-                                            pw: password
-                                            },
-                                            {
-                                                headers: {
-                                                    Authorization: getCookie("token"),
-                                                }
-                                            }
-                                        ).then((result) => {
-                                            if (result.data.statusCode === 201) {
-                                                alert(result.data.message)
-                                                navigate('/')
-                                            }
-                                        }).catch((err) => {
-                                            if (err.data.statusCode === 400) {
-                                                alert(err.data.message)
-                                            } else if (err.data.statusCode === 501) {
-                                                alert(err.data.message)
-                                            }
-                                        })
+                                        alert("로그인 완료")
                                     }
-                                }).catch((err) => {
-                                    if (err.status === 401) {
-                                        alert(err.data.message)
-                                    } else if (err.status === 500) {
-                                        alert(err.data.message)
+                                }) 
+                                .catch((err) => {
+                                    const statusCode = err.status;
+
+                                    if (statusCode === 401) {
+                                        alert("ID 또는 비밀번호가 일치하지 않음")
+                                    } else if (statusCode === 500) {
+                                        alert("서버 오류")
                                     }
                             })
                         }}
