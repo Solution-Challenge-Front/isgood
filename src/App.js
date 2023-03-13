@@ -8,7 +8,6 @@ import Signup2 from "./page/Signup/Signup2";
 import Profile from "./page/profile/profile";
 import Login from "./page/Login/Login";
 import Posts from "./page/Posts/posts.js";
-import LoginGoogle from "./page/Login/google_oauth/oauth_login";
 
 import subject from "./subject.js";
 
@@ -44,7 +43,6 @@ function App() {
         <Route path="/posts_create" element={<PostCreate />} />
         <Route path="/posts_update" element={<PostCreate />} />
         <Route path="/posts_detail" element={<PostDetail />} />
-        <Route path="/login_google" element={<LoginGoogle />} />
       </Routes>
 
       <footer className="py-3 my-4">
