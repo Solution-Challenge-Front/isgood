@@ -68,7 +68,6 @@ function Login(){
                     >
                         Login
                     </Button>
-                    <Button onClick={()=>{ navigate('/login_google') }} variant="secondary" className='Login_button'>googleLogin</Button>
                 </Container>
             </div>
         </div>
