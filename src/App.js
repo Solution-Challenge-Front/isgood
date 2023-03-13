@@ -8,8 +8,6 @@ import Signup2 from "./page/Signup/Signup2";
 import Profile from "./page/profile/profile";
 import Login from "./page/Login/Login";
 import Posts from "./page/Posts/posts.js";
-
-import LoginGoogle from "./page/Login/google_oauth/oauth_login";
 import Chat from "./page/ChatTest/chat.js";
 import subject from "./subject.js";
 
