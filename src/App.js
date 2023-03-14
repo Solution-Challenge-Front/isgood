@@ -8,6 +8,7 @@ import Signup2 from "./page/Signup/Signup2";
 import Profile from "./page/profile/profile";
 import Login from "./page/Login/Login";
 import Posts from "./page/Posts/posts.js";
+import Idealist from "./page/Posts/idea_list";
 import Chat from "./page/ChatTest/chat.js";
 import subject from "./subject.js";
 
@@ -39,10 +40,10 @@ function App() {
         <Route path="/introduce" element={<Introduce />} />
         <Route path="/signupselect" element={<SignupSelect />} />
         <Route path="/posts/:id" element={<Posts />} />
-        <Route path="/idea_list" element={<Posts />} />
+        <Route path="/idea_list" element={<Idealist />} />
+        <Route path="idea_list/:id" element={<PostDetail />} />
         <Route path="/posts_create" element={<PostCreate />} />
         <Route path="/posts_update" element={<PostCreate />} />
-        <Route path="/posts_detail" element={<PostDetail />} />
       </Routes>
 
       <footer className="py-3 my-4">

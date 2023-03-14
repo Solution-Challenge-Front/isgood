@@ -1,14 +1,12 @@
 .post-detail-title {
   border: 1px solid #333;
   border-radius: 5px;
-  background: #999;
 }
 
 .post-detail-desc{
   height: 600px;
   border: 1px solid #333;
   border-radius: 5px;
-  background: #666;
 }
 
 .detail-btns {
