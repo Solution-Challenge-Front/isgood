@@ -14,7 +14,7 @@ import GoogleButton from 'react-google-button';
 
 function Login() {
     const googleSocialLogin = useGoogleLogin({
-        onSuccess: (codeResponse) => console.log(codeResponse),
+        onSuccess: (TokenResponse) => console.log(TokenResponse),
         flow: 'auth-code',
     })
     let [id, get_id] = useState('');
