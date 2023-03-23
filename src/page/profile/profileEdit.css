@@ -30,7 +30,10 @@
 .headContext > h3 {
   font-weight: bold;
 }
-
+.isSave {
+  margin-top: 40px;
+  margin-left: auto;
+}
 .profileContanier {
   display: flex;
   flex-direction: column;
@@ -50,12 +53,8 @@
   width: 50px;
   text-align: center;
 }
-.userName > .name {
-  width: 150px;
-  margin-left: 20px;
-  border: solid 1px black;
-
-  padding-bottom: auto;
+.userName > input {
+  width: 600px;
 }
 
 .phoneNum {
@@ -69,10 +68,9 @@
   text-align: left;
   width: 350px;
 }
-.phoneNum > div {
+.phoneNum > select {
   margin-right: 10px;
   width: 80px;
-  border: solid 1px black;
 }
 .phoneNum > input {
   margin-right: 10px;
@@ -96,6 +94,9 @@
   overflow: hidden;
   margin-right: 20px;
 }
+.isUpdate {
+  margin-left: 30%;
+}
 
 .youtBio {
   display: flex;
@@ -109,11 +110,6 @@
   text-align: left;
   width: 350px;
 }
-.youtBio > .bioMain {
-  width: 500px;
-  height: 200px;
-  border: solid 1px black;
-}
 
 .email {
   display: flex;
@@ -126,10 +122,9 @@
   text-align: left;
   width: 350px;
 }
-.emailContext {
-  border: solid 1px black;
+.email > input {
+  margin-top: 45px;
   margin-right: 10px;
   height: 30px;
   width: 600px;
-  padding-left: 20px;
 }

@@ -6,6 +6,7 @@ import SignupSelect from "./page/Signup/SignupSelect.js";
 import Signup1 from "./page/Signup/Signup1";
 import Signup2 from "./page/Signup/Signup2";
 import Profile from "./page/profile/profile";
+import ProfileEdit from "./page/profile/profileEdit";
 import Login from "./page/Login/Login";
 import Posts from "./page/Posts/posts.js";
 import Idealist from "./page/Posts/idea_list";
@@ -37,6 +38,7 @@ function App() {
         <Route path="/signup2" element={<Signup2 />} />
         <Route path="/login" element={<Login />} />
         <Route path="/profile" element={<Profile />} />
+        <Route path="/profileEdit" element={<ProfileEdit />} />
         <Route path="/introduce" element={<Introduce />} />
         <Route path="/signupselect" element={<SignupSelect />} />
         <Route path="/posts/:id" element={<Posts />} />
@@ -44,6 +46,7 @@ function App() {
         <Route path="idea_list/:id" element={<PostDetail />} />
         <Route path="/posts_create" element={<PostCreate />} />
         <Route path="/posts_update" element={<PostCreate />} />
+        <Route path="/chat" element={<Chat />} />
       </Routes>
 
       <footer className="py-3 my-4">
