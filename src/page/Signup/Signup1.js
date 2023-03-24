@@ -9,16 +9,16 @@ import axios from 'axios';
 import { getCookie } from '../../util/Cookie';
 
 function Signup1(){
-    let [_id, set_id] = useState("x");
-    
+    let _id = "x"
+    if(getCookie("token_id") !== undefined) {
+        _id = getCookie("token_id")
+    }
     useEffect(()=>{
         AOS.init({duration: 2000});
     },[])
-    if(getCookie("token_id") !== 'undefined') {
-        set_id(getCookie("token_id"))
-    }
 
     
+
     return(
         <div className='signup1_main' data-aos="fade-up">
             <div className='signup_container'>
@@ -151,7 +151,7 @@ function Gsignup_content(props){
             <Form.Group as={Row} className="mb-3">
                 <Col sm>
                     <p>아이디를 입력하세요</p>
-                    <Form.Control type="text" placeholder={props._id.gmail} readonly />
+                    <Form.Control type="text" placeholder={props._id.gmail} readOnly />
                 </Col>
             </Form.Group>
             <Form.Group as={Row} className="mb-3">
@@ -165,7 +165,7 @@ function Gsignup_content(props){
             <Form.Group as={Row} className="mb-3">
                 <Col sm>
                     <p>이름을 입력하세요</p>
-                    <Form.Control type="text" placeholder={props._id.name} readonly />
+                    <Form.Control type="text" placeholder={props._id.name} readOnly />
                 </Col>
             </Form.Group>
             <Form.Group as={Row} className="mb-3">
