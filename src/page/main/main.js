@@ -1,6 +1,5 @@
 import './main.css';
 import { useNavigate } from 'react-router-dom';
-import axios from 'axios';
 
 function MainPage() {
   let navigate = useNavigate();
@@ -17,7 +16,7 @@ function MainPage() {
               Anyone can<br/> implement an<br/> idea
             </h1>
             <div className='main-wrap-btns'>
-              <button className='main-btns-join' onClick={() => { navigate('/signupselect')}}>Join Us</button>
+              <button className='main-btns-join' onClick={() => { navigate('/login')}}>Join Us</button>
               <button className='main-btns-learn' onClick={() => { navigate('/introduce') }}>Learn More</button>
             </div>
           </div>

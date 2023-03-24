@@ -11,6 +11,7 @@ import Posts from "./page/Posts/posts.js";
 import Idealist from "./page/Posts/idea_list";
 import Chat from "./page/ChatTest/chat.js";
 import subject from "./subject.js";
+import TranslatePage from "./tool/transfer";
 
 import PostCreate from "./page/Posts/posts_create.js";
 import PostDetail from "./page/Posts/posts_detail.js";

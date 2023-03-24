@@ -13,10 +13,22 @@ import { useGoogleLogin } from '@react-oauth/google'
 import GoogleButton from 'react-google-button';
 
 function Login() {
+    let [d, set_d] = useState([]);
     const googleSocialLogin = useGoogleLogin({
-        onSuccess: (TokenResponse) => console.log(TokenResponse),
+        onSuccess: (codeResponse) => {
+            console.log(codeResponse)
+            set_d(codeResponse.code);
+            set_d(codeResponse.code);
+            axios.post('http://192.168.20.232:8080/auth/gauth',{
+                data : codeResponse.code
+            })
+                .then((result) => {
+                console.log(result)
+            })
+        },
         flow: 'auth-code',
     })
+    
     let [id, get_id] = useState('');
     let [password, get_password] = useState('');
     let navigate = useNavigate();
@@ -58,7 +70,7 @@ function Login() {
                                         setCookie("token", result.data.jwt, {
                                             path: "/",
                                         })
-                                        alert("로그인 완료")
+                                        navigate('/')
                                     }
                                 })
                                 .catch((err) => {
@@ -67,16 +79,19 @@ function Login() {
                                     if (statusCode === 401) {
                                         alert("ID 또는 비밀번호가 일치하지 않음")
                                     } else if (statusCode === 500) {
-                                        alert("서버 오류")
+                                        navigate('/login')
                                     }
                                 })
                         }}
                     >
                         Login
                     </Button>
-                    <GoogleButton onClick={() => googleSocialLogin()} />
+                    <GoogleButton onClick={() => {googleSocialLogin();
+                    
+                    }} />
 
                 </Container>
+                
             </div>
         </div>
     );
