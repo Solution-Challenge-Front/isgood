@@ -16,10 +16,6 @@ function Introduce4(){
                         </div>
                     </div>
                 </div>
-                <div className='int4_buttonbox'>
-                    <Button variant="secondary" onClick={()=> { navigate('/signupselect') }}>회원가입</Button>
-                    <Button variant="secondary" onClick={()=> { navigate('/login') }}>로그인</Button>
-                </div>
             </div>
         </div>
     );
