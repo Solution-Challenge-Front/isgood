@@ -83,7 +83,7 @@ function Signup1(){
                         </Col>
                     </Form.Group>
                     <Button variant="secondary" className='signup_button'
-                        onClick={() => {
+                        onClick={() => { 
                             axios.post(`${process.env.REACT_APP_API_KEY}/auth/join`, {
                                 common: true,
                                 id: id,
