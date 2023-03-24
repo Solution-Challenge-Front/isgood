@@ -4,6 +4,7 @@ import { Button } from 'react-bootstrap';
 import { useEffect, useState } from 'react';
 import axios from 'axios';
 import { getCookie } from "../../util/Cookie";
+import Chat from "../ChatTest/chat.js"
 
 function PostDetail() {
   let navigate = useNavigate()
@@ -11,8 +12,16 @@ function PostDetail() {
   const location = useLocation();
   const [isLogin, setIsLogin] = useState(false);
 
+
+  //roomname , 닉네임, 스테이터스 코드
+  const [roomname, setroom] = useState('1')
+  const [nickname, setnick] = useState('최동우')
+
+
   const id = location.state.id
-  
+
+  const jwtToken = getCookie("token");
+  console.log('token:' +   jwtToken)
   useEffect(() => {
     const token = getCookie('token');
 
@@ -57,6 +66,25 @@ function PostDetail() {
       <div className="container">
         <div className="row">
           <div className="col-12">
+            <button onClick={()=>{
+               <Chat nickname={nickname}/>
+               axios.post(`${process.env.REACT_APP_API_KEY}/httpchat/create`,
+               {
+                 id: id
+               },
+               {
+                headers: {
+                  Authorization: getCookie("token"),
+                },
+              })
+              .then((result)=>{
+                console.log(result.data)
+                setroom(result.data.roomname)
+                setnick(result.data.nickname)
+                console.log(nickname)
+              })         
+            }}>1:1채팅</button>
+           
             <h2 className="post-detail-title mt-5"
             >
               {idea.title}
