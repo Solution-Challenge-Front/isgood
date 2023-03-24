@@ -96,14 +96,14 @@ function Signup1(){
                             })
                                 .then((result) => {
                                     if (result.status === 201) {
-                                        alert(result.data.message)
+                                        alert("회원가입 성공")
                                         navigate('/')
                                 }
                                 }).catch((result) => {
                                     if (result.status === 401) {
                                     alert("ID 중복입니다.")
                                     } else if (result.status === 500) {
-                                        alert(result.error)
+                                        navigate('/signup1')
                                 }
                             })
                     }}

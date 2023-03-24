@@ -50,9 +50,8 @@ function App() {
           <Route path="idea_list/:id" element={<PostDetail />} />
           <Route path="/posts_create" element={<PostCreate />} />
           <Route path="/posts_update" element={<PostCreate />} />
-        <Route path="/chat" element={<Chat />} />
-        <Route path="/profileEdit" element={<ProfileEdit />} />
-          
+          <Route path="/chat" element={<Chat />} />
+          <Route path="/profileEdit" element={<ProfileEdit />} />
         </Routes>
       </GoogleOAuthProvider>
 
