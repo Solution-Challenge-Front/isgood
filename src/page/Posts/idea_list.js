@@ -42,31 +42,34 @@ function Idealist() {
       navigate('/login');
     }
   }, []);
+  
   if (isLogin) {    
     return (
       <>
         <div className="container">
           <div className="row">
-            <div className="col-12 mt-5">
-              <h2>아이디어 목록</h2>
+            <div className="col-12 mt-5 idea_list_tit">
+              <h2>Idea List</h2>
             </div>
                 {idea.map((item,i) => (
-                  <div className="col-4 idea-wrap">
-                    <Card style={{ width: '18rem' ,height: '18rem'}}>
-                      <Card.Body>
-                        <Card.Title>{item.title}</Card.Title>
-                        <Card.Subtitle className="mb-2 text-muted">Card Subtitle</Card.Subtitle>
-                        <Card.Text>
-                          생성일:{item.first_date}<br/>
-                          수정일:{item.update_date}
-                        </Card.Text>
-                        <Card.Link onClick={() => {
-                          navigate(`/idea_list/${item._id}`, { state: { id: item._id  } })
-                        }}>아이디어 보러가기</Card.Link>
-                        <Card.Link href="#">{item.creator}</Card.Link>
-                      </Card.Body>
-                    </Card>
+                  <div className="col-4 idea-wrap mt-5">
+                    <div className="card" onClick={() => {
+                      navigate(`/idea_list/${item._id}`, { state: { id: item._id } })
+                    }}>
+                      <div className="card-content">
+                        <h1>{item.title}</h1>
+                        <strong>
+                          닉네임: {item.creator}
+                        </strong>
+                        <p>
+                          <span>
+                          생성일:{item.first_date}<br/>수정일:{item.update_date}
+                          </span>
+                        </p>
+                      </div>
+                    </div>
                   </div>
+                  
                 ))}
           </div>
         </div>

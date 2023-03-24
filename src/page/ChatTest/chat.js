@@ -1,18 +1,27 @@
 import React, { useState, useEffect } from "react";
+import { useLocation } from 'react-router-dom';
 import "./chat.css";
-function Chat() {
+function Chat(props) {
+  
+  // const location = useLocation();
+  // const nickname = location.state.nickname
+
+  // console.log(nickname)
   let [messages, setMessages] = useState([
     {
       sender: "other",
       message: "Hello, how are you?",
+      date : '3월 24일 오후 9시'
     },
     {
       sender: "self",
       message: "I am good, thank you!",
+      date : '3월 4일 오후 10시'
     },
     {
       sender: "other",
       message: "That is great to hear!",
+      date : '3월 4일 오후 10시 11분'
     },
   ]);
   const [profilePicture, setProfilePicture] = useState(
@@ -36,7 +45,7 @@ function Chat() {
         <div className="header">
           <div className="profileName">
             <img src={process.env.PUBLIC_URL + "/lol.jpg"} />
-            <h5>김민준</h5>
+            <h5>{props.nickname}</h5>
           </div>
 
           <ul className="messages">
@@ -48,7 +57,7 @@ function Chat() {
                 }`}
               >
                 {message.message}
-                <div className="time">오후3시</div>
+                <div className="time">{message.date}  </div>
               </li>
             ))}
           </ul>

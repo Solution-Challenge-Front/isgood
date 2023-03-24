@@ -1,3 +1,61 @@
 .idea-wrap{
   text-aling: center;
 }
+<<<<<<< HEAD
+=======
+
+.idea_list_tit {
+  display:flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.card-content > h1 {
+  font-size: 18px;
+  font-weight: 400;
+  color: #1f2d3d;
+  line-height: 1.25;
+}
+
+.card-content > strong {
+  font-size: 12px;
+  font-weight: 400;
+  color: #afb3b9;
+  line-height: 1.4285714286;
+}
+
+.card-content > p > span {
+  font-size: 8px;
+  color: #79818b;
+  line-height: 1.5;
+}
+
+.card {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  background-color: #fff;
+}
+.card:hover {
+  cursor: pointer;
+  box-shadow: 1px 1px 20px #ddd;
+}
+
+.card-user {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  margin-right: 20px;
+}
+
+.card-content h1 {
+  margin-bottom: 4px;
+}
+
+.card-content strong {
+  display: block;
+  margin-bottom: 12px;
+}
+>>>>>>> 7762b47107670904ff7725247f80edad7216b352

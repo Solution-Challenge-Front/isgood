@@ -11,6 +11,7 @@ import Login from "./page/Login/Login";
 import Posts from "./page/Posts/posts.js";
 import Idealist from "./page/Posts/idea_list";
 import Chat from "./page/ChatTest/chat.js";
+import ChatList from "./page/ChatTest/chatlist";
 import subject from "./subject.js";
 import TranslatePage from "./tool/transfer";
 
@@ -21,8 +22,7 @@ import PostDetail from "./page/Posts/posts_detail.js";
 
 //hook import
 import { Route, Routes, useNavigate } from "react-router-dom";
-import { GoogleOAuthProvider } from '@react-oauth/google'
-
+import { GoogleOAuthProvider } from "@react-oauth/google";
 
 //style import
 import "./App.css";
@@ -33,8 +33,10 @@ function App() {
   return (
     <div className="App">
       <Navi></Navi>
-      
-      <GoogleOAuthProvider clientId={`${process.env.REACT_APP_GOOGLE_CLIENT_ID}`}>
+
+      <GoogleOAuthProvider
+        clientId={`${process.env.REACT_APP_GOOGLE_CLIENT_ID}`}
+      >
         <Routes>
           <Route path="/" element={<MainPage />} />
           <Route path="/introduce" element={<Introduce />} />
@@ -52,13 +54,16 @@ function App() {
           <Route path="/posts_update" element={<PostCreate />} />
           <Route path="/chat" element={<Chat />} />
           <Route path="/profileEdit" element={<ProfileEdit />} />
+
+          <Route path="/chatlist" element={<ChatList />} />
+
+
         </Routes>
       </GoogleOAuthProvider>
 
-
       <footer className="py-3 my-4">
         <hr />
-        <p className="text-center text-muted">© 2022 Company, Inc</p>
+        <p className="text-center text-muted">© 2023 Life Better, Idea Connection</p>
       </footer>
     </div>
   );

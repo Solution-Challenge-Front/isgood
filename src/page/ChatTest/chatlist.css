@@ -1,0 +1,60 @@
+.chat-room-list {
+  border-top: 1px solid #e8e8e8;
+  overflow-y: scroll;
+  height: 100%;
+  width: 80%;
+  margin: auto;
+  
+}
+
+.chat-room-item {
+  display: flex;
+  align-items: center;
+  padding: 16px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.chat-room-item:hover {
+  background-color: #f5f5f5;
+}
+
+.chat-room-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background-color: #e8e8e8;
+  font-size: 16px;
+  font-weight: bold;
+  color: #fff;
+}
+
+.chat-room-details {
+  display: flex;
+  flex-direction: column;
+  margin-left: 16px;
+}
+
+.chat-room-name {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.chat-room-meta {
+  display: flex;
+  flex-direction: column;
+  margin-top: 8px;
+}
+
+.chat-room-nickname {
+  font-size: 14px;
+  color: #b1b1b1;
+}
+
+.chat-room-unread {
+  font-size: 14px;
+  color: #ff6f00;
+}
