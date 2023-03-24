@@ -18,16 +18,30 @@ function SignupSelect(){
                     <br/>
                     <div className="select">
                         <div className='select1'>
-                            <p>등록자에 대한 기능 ~ </p>
+                            <h3>아이디어 등록자</h3>
+                            <div className='inform_box'>
+                                
+                                <p>아이디어를 등록할 수 있습니다.</p>
+                                <p>타인의 아이디어를 열람할 수 없습니다.</p>
+                                <p>등록한 아이디어를 통하여 투자자와 접촉할 수 있습니다.</p>
+                                <p>그외에 기본기능을 이용할 수 있습니다.</p>
+                            </div>
                             <Button  variant="secondary"  onClick={()=>{ navigate('/signup1')}}>
                                 아이디어 등록자로 시작하기
                             </Button>
                         </div>
                         <div className='select2'>
-                        <p>이용자에 대한 기능 ~ </p>
+                            <h3>투자자</h3>
+                            <div className='inform_box'>
+                                
+                                <p>아이디어를 등록할 수 없습니다.</p>
+                                <p>타인의 아이디어를 허용범위 내에서 열람할 수 있습니다.</p>
+                                <p>등록된 아이디어를 통하여 등록자와 접촉할 수 있습니다.</p>
+                                <p>그외에 기본기능을 이용할 수 있습니다.</p>                              
+                            </div>
                             <Button  variant="secondary"  onClick={()=>{ navigate('/signup2')}}>
-                                아이디어 이용자로 시작하기
-                            </Button>
+                                    아이디어 이용자로 시작하기
+                                </Button>
                         </div>
                     </div>
                 </Container>

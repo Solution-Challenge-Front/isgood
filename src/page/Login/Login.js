@@ -64,8 +64,7 @@ function Login() {
                                 pw: password
                             })
                                 .then((result) => {
-                                    const statusCode = result.status;
-
+                                    const statusCode = result.status;   
                                     if (statusCode === 201) {
                                         setCookie("token", result.data.jwt, {
                                             path: "/",

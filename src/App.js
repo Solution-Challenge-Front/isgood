@@ -6,6 +6,7 @@ import SignupSelect from "./page/Signup/SignupSelect.js";
 import Signup1 from "./page/Signup/Signup1";
 import Signup2 from "./page/Signup/Signup2";
 import Profile from "./page/profile/profile";
+import ProfileEdit from "./page/profile/profileEdit";
 import Login from "./page/Login/Login";
 import Posts from "./page/Posts/posts.js";
 import Idealist from "./page/Posts/idea_list";
@@ -32,6 +33,7 @@ function App() {
   return (
     <div className="App">
       <Navi></Navi>
+      
       <GoogleOAuthProvider clientId={`${process.env.REACT_APP_GOOGLE_CLIENT_ID}`}>
         <Routes>
           <Route path="/" element={<MainPage />} />
@@ -48,6 +50,8 @@ function App() {
           <Route path="idea_list/:id" element={<PostDetail />} />
           <Route path="/posts_create" element={<PostCreate />} />
           <Route path="/posts_update" element={<PostCreate />} />
+          <Route path="/chat" element={<Chat />} />
+          <Route path="/profileEdit" element={<ProfileEdit />} />
         </Routes>
       </GoogleOAuthProvider>
 
