@@ -54,7 +54,10 @@ function App() {
           <Route path="/posts_update" element={<PostCreate />} />
           <Route path="/chat" element={<Chat />} />
           <Route path="/profileEdit" element={<ProfileEdit />} />
+
           <Route path="/chatlist" element={<ChatList />} />
+
+
         </Routes>
       </GoogleOAuthProvider>
 

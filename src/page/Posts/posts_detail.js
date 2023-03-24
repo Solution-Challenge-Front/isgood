@@ -42,11 +42,13 @@ function PostDetail() {
       .catch((err) => {
         const statusCode = err.status;
         if (statusCode === 401) {
-          alert("토큰이 유효하지 않음")
+          alert("권한이 없습니다.")
+          navigate('/idea_list')
         } else if (statusCode === 404) {
           alert("게시물이 존재하지 않습니다.")
         } else if (statusCode === 500) {
-          alert("서버 에러입니다.")
+          alert("에러발생 목록페이지로 돌아갑니다.")
+          navigate('/idea_list')
         }
       });
   }, []);
@@ -112,11 +114,13 @@ function PostDetail() {
                     .catch((err) => {
                       const statusCode = err.state;
                       if (statusCode === 400) {
-                        alert("토큰 오류")
+                        alert("권한이 없습니다.")
+                        navigate('/idea_list')
                       } else if (statusCode === 404) {
                         alert("정보가 일치하지 않습니다.")
                       } else if (statusCode === 500) {
-                        alert("서버 에러")
+                        alert("에러발생, 목록으로 돌아갑니다.")
+                        navigate('/idea_list')
                       }
                     })
               }}

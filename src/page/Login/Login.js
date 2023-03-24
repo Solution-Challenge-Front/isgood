@@ -14,53 +14,20 @@ import GoogleButton from 'react-google-button';
 
 function Login() {
     let [d, set_d] = useState([]);
-    const [ profilez, setProfile ] = useState([]);
     const googleSocialLogin = useGoogleLogin({
         onSuccess: (codeResponse) => {
+            console.log(codeResponse)
             set_d(codeResponse.code);
-            // axios.post('https://oauth2.googleapis.com/token', {
-            //     code: codeResponse.code,
-            //     client_id: '',
-            //     client_secret: '',
-            //     redirect_uri: 'http://localhost:3000', // Your app's redirect URI
-            //     grant_type: 'authorization_code'
-            // })
-            // .then((response) => {
-            //     set_d(response.data);
-            //     console.log(d);
-            //     // Use the access token as needed
-            // })
-            // .catch((error) => {
-            //     console.error(error);
-            // });
-            
             set_d(codeResponse.code);
             axios.post('http://192.168.20.232:8080/auth/gauth',{
                 data : codeResponse.code
             })
+                .then((result) => {
+                console.log(result)
+            })
         },
         flow: 'auth-code',
     })
-    // useEffect(
-    //     () => {
-    //         console.log(d);
-    //         if (d) {
-    //             axios
-    //                 .get(`https://www.googleapis.com/oauth2/v1/userinfo?access_token=` + d.code, {
-    //                     headers: {
-    //                         Authorization: `Bearer ` + d.code,
-    //                         Accept: 'application/json'
-    //                     }
-    //                 })
-    //                 .then((res) => {
-    //                     setProfile(res.data);
-    //                     console.log(profilez)
-    //                 })
-    //                 .catch((err) => console.log(err));
-    //         }
-    //     },
-    //     [ d ]
-    // );
     
     let [id, get_id] = useState('');
     let [password, get_password] = useState('');
@@ -97,13 +64,12 @@ function Login() {
                                 pw: password
                             })
                                 .then((result) => {
-                                    const statusCode = result.status;
-
+                                    const statusCode = result.status;   
                                     if (statusCode === 201) {
                                         setCookie("token", result.data.jwt, {
                                             path: "/",
                                         })
-                                        alert("로그인 완료")
+                                        navigate('/')
                                     }
                                 })
                                 .catch((err) => {
@@ -112,7 +78,7 @@ function Login() {
                                     if (statusCode === 401) {
                                         alert("ID 또는 비밀번호가 일치하지 않음")
                                     } else if (statusCode === 500) {
-                                        alert("서버 오류")
+                                        navigate('/login')
                                     }
                                 })
                         }}

@@ -9,7 +9,7 @@ function Introduce4(){
                 <div className='introduce_container'>
                     <div className='int1_text'>
                         <h1 className='int1_title'>Welcome Idea Connect</h1>
-                        <h2>A service that can share ideas with <br/>people around the world and develop the world!</h2>
+                        <h2>A service that can share ideas with <br/>people around the world and<br/> develop the world!</h2>
                     </div>
                     <div className='int1_img_container'>
                         <div className='int4_img'>
