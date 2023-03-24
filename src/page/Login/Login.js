@@ -13,17 +13,32 @@ import { useGoogleLogin } from '@react-oauth/google'
 import GoogleButton from 'react-google-button';
 
 function Login() {
+    let navigate = useNavigate();
     let [d, set_d] = useState([]);
     const googleSocialLogin = useGoogleLogin({
         onSuccess: (codeResponse) => {
-            console.log(codeResponse)
-            set_d(codeResponse.code);
+            console.log(codeResponse.code)
             set_d(codeResponse.code);
             axios.post('http://192.168.20.232:8080/auth/gauth',{
-                data : codeResponse.code
+                code : codeResponse.code
             })
-                .then((result) => {
-                console.log(result)
+            .then((result) => {
+                
+            console.log(result)
+            })
+            .catch((result) => {
+                console.log(result.response)
+                if(result.response.data.statusCode == 404){
+                    setCookie('token_id', result.response.data._id, {
+                        path: "/",
+                    });
+                    navigate('/signupselect');
+                }else{
+                    setCookie('token', result.response.data.jwt, {
+                        path: "/",
+                    });
+                    navigate('/');
+                }
             })
         },
         flow: 'auth-code',
@@ -31,7 +46,6 @@ function Login() {
     
     let [id, get_id] = useState('');
     let [password, get_password] = useState('');
-    let navigate = useNavigate();
     useEffect(() => {
         AOS.init({ duration: 2000 });
     }, [])
@@ -68,7 +82,7 @@ function Login() {
                                     if (statusCode === 201) {
                                         setCookie("token", result.data.jwt, {
                                             path: "/",
-                                        })
+                                        })  
                                         navigate('/')
                                     }
                                 })
