@@ -7,9 +7,12 @@ import AOS from 'aos';
 import 'aos/dist/aos.css';
 import axios from 'axios';
 import { getCookie } from '../../util/Cookie';
+import { useDispatch, useSelector } from "react-redux"
 
 function Signup1(){
     let _id = "x"
+    let a = useSelector((state) => { return state } )
+    console.log(a)
     if(getCookie("token_id") !== undefined) {
         _id = getCookie("token_id")
     }
@@ -26,7 +29,7 @@ function Signup1(){
                     (_id == "x") ?
                      <Signup_content/>
                      : 
-                     <Gsignup_content _id={_id}/>
+                     <Gsignup_content user = {a}/>
                 }
             </div>
         </div>
@@ -135,7 +138,8 @@ function Signup_content(){
     );
 }
 
-function Gsignup_content(props){
+function Gsignup_content(user){
+    console.log(user.user.g_user_info.mail)
     let navigate = useNavigate
     let[nickname, get_nickname] = useState('');
     let[id, get_id] = useState('');
@@ -151,7 +155,7 @@ function Gsignup_content(props){
             <Form.Group as={Row} className="mb-3">
                 <Col sm>
                     <p>아이디를 입력하세요</p>
-                    <Form.Control type="text" placeholder={props._id.gmail} readOnly />
+                    <Form.Control type="text" placeholder={user.user.g_user_info.mail.payload} readOnly />
                 </Col>
             </Form.Group>
             <Form.Group as={Row} className="mb-3">
@@ -165,7 +169,7 @@ function Gsignup_content(props){
             <Form.Group as={Row} className="mb-3">
                 <Col sm>
                     <p>이름을 입력하세요</p>
-                    <Form.Control type="text" placeholder={props._id.name} readOnly />
+                    <Form.Control type="text" placeholder={user.user.g_user_info.name.payload} readOnly />
                 </Col>
             </Form.Group>
             <Form.Group as={Row} className="mb-3">
@@ -209,7 +213,7 @@ function Gsignup_content(props){
                         email: email,
                         phone: Number(phone),
                         nickname: nickname,
-                        _id: props._id
+                        _id: user._id
                     })
                         .then((result) => {
                             if (result.status === 201) {
