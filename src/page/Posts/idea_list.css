@@ -1,11 +1,12 @@
 .idea-wrap{
-  text-aling: center;
+  text-align: center;
 }
 
 .idea_list_tit {
   display:flex;
-  flex-direction: column;
-  align-items: flex-start;
+  flex-direction: row;
+  align-items:flex-start;
+  justify-content: space-between;
 }
 
 .card-content > h1 {
@@ -56,3 +57,5 @@
   display: block;
   margin-bottom: 12px;
 }
+
+

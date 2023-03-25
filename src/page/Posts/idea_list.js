@@ -3,7 +3,7 @@ import { useEffect, useState } from "react"
 import { setCookie, getCookie, removeCookie } from '../../util/Cookie';
 import { useNavigate } from "react-router";
 
-import { Card } from 'react-bootstrap'
+import { Button } from 'react-bootstrap'
 
 import './idea_list.css'
 
@@ -50,6 +50,9 @@ function Idealist() {
           <div className="row">
             <div className="col-12 mt-5 idea_list_tit">
               <h2>Idea List</h2>
+              <Button className="write_btn" variant="outline-dark" onClick={() => {
+                navigate('/posts_create')
+              }}>Write</Button>
             </div>
                 {idea.map((item,i) => (
                   <div className="col-4 idea-wrap mt-5">

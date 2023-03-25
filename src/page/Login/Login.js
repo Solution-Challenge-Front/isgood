@@ -70,7 +70,7 @@ function Login() {
                     <Form.Group as={Row} className="mb-3">
                         <Col sm>
                             <p>비밀번호를 입력하세요</p>
-                            <Form.Control type="text" placeholder="비밀번호" onChange={(e) => {
+                            <Form.Control type="password" placeholder="비밀번호" onChange={(e) => {
                                 get_password(e.target.value)
                             }} />
                         </Col>
