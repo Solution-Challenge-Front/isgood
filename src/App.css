@@ -3,6 +3,10 @@
 }
 
 footer{
+  position: fixed;
+  box-sizing: border-box;
+  margin: 0;
+  background-color: #282c34;
   bottom: 0;
   width: 100%;
 }
