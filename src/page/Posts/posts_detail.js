@@ -10,6 +10,7 @@ function PostDetail() {
   let navigate = useNavigate();
   const [idea, setIdea] = useState({});
   const location = useLocation();
+  const [isLogin, setIsLogin] = useState(false);
 
   const id = location.state.id;
 
@@ -17,37 +18,46 @@ function PostDetail() {
 
   // 게시글열기
   useEffect(() => {
-    axios
-      .post(
-        `${process.env.REACT_APP_API_KEY}/idea/openOne`,
-        {
-          _id: id,
-        },
-        {
-          headers: {
-            Authorization: getCookie("token"),
+    const token = getCookie("token");
+
+    if (token) {
+      setIsLogin(true);
+      axios
+        .post(
+          `${process.env.REACT_APP_API_KEY}/idea/openOne`,
+          {
+            _id: id,
           },
-        }
-      )
-      .then((result) => {
-        const statusCode = result.status;
-        if (statusCode === 201) {
-          const ideas = result.data.data;
-          setIdea(ideas);
-        }
-      })
-      .catch((err) => {
-        const statusCode = err.status;
-        if (statusCode === 401) {
-          alert("권한이 없습니다.");
-          navigate("/idea_list");
-        } else if (statusCode === 404) {
-          alert("게시물이 존재하지 않습니다.");
-        } else if (statusCode === 500) {
-          alert("에러발생 목록페이지로 돌아갑니다.");
-          navigate("/idea_list");
-        }
-      });
+          {
+            headers: {
+              Authorization: token,
+            },
+          }
+        )
+        .then((result) => {
+          const statusCode = result.status;
+          if (statusCode === 201) {
+            const ideas = result.data.data;
+            setIdea(ideas);
+            console.log(ideas);
+          }
+        })
+        .catch((err) => {
+          const statusCode = err.status;
+          if (statusCode === 401) {
+            alert("권한이 없습니다.");
+            navigate("/idea_list");
+          } else if (statusCode === 404) {
+            alert("게시물이 존재하지 않습니다.");
+          } else if (statusCode === 500) {
+            alert("에러발생 목록페이지로 돌아갑니다.");
+            navigate("/idea_list");
+          }
+        });
+    } else {
+      alert("권한이 필요합니다.");
+      navigate("/");
+    }
   }, []);
   return (
     <>

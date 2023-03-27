@@ -8,22 +8,41 @@ import AOS from 'aos';
 import 'aos/dist/aos.css';
 import axios from 'axios';
 import { setCookie, getCookie, removeCookie } from '../../util/Cookie';
-
+import { useDispatch, useSelector } from "react-redux"
 import { useGoogleLogin } from '@react-oauth/google'
 import GoogleButton from 'react-google-button';
+import { set_name, set_mail } from '../../store';
 
 function Login() {
+    let dispatch = useDispatch()
+    let navigate = useNavigate();
     let [d, set_d] = useState([]);
     const googleSocialLogin = useGoogleLogin({
         onSuccess: (codeResponse) => {
-            console.log(codeResponse)
+            console.log(codeResponse.code)
             set_d(codeResponse.code);
-            set_d(codeResponse.code);
-            axios.post('http://192.168.20.232:8080/auth/gauth',{
-                data : codeResponse.code
+            axios.post('http://35.216.65.169:8080/auth/gauth',{
+                code : codeResponse.code
             })
-                .then((result) => {
-                console.log(result)
+            .then((result) => {
+                
+            console.log(result)
+            })
+            .catch((result) => {
+                console.log(result.response)
+                if(result.response.data.statusCode == 404){
+                    setCookie('token_id', result.response.data._id, {
+                        path: "/",
+                    });
+                    dispatch(set_name(result.response.data.name));
+                    dispatch(set_mail(result.response.data.email));
+                    navigate('/signupselect');
+                }else{
+                    setCookie('token', result.response.data.jwt, {
+                        path: "/",
+                    });
+                    navigate('/');
+                }
             })
         },
         flow: 'auth-code',
@@ -31,7 +50,6 @@ function Login() {
     
     let [id, get_id] = useState('');
     let [password, get_password] = useState('');
-    let navigate = useNavigate();
     useEffect(() => {
         AOS.init({ duration: 2000 });
     }, [])
@@ -52,7 +70,7 @@ function Login() {
                     <Form.Group as={Row} className="mb-3">
                         <Col sm>
                             <p>비밀번호를 입력하세요</p>
-                            <Form.Control type="text" placeholder="비밀번호" onChange={(e) => {
+                            <Form.Control type="password" placeholder="비밀번호" onChange={(e) => {
                                 get_password(e.target.value)
                             }} />
                         </Col>
@@ -68,7 +86,7 @@ function Login() {
                                     if (statusCode === 201) {
                                         setCookie("token", result.data.jwt, {
                                             path: "/",
-                                        })
+                                        })  
                                         navigate('/')
                                     }
                                 })

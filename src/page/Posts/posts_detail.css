@@ -1,14 +1,45 @@
 .post-detail-title {
-  border: 1px solid #333;
-  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  width: 100%;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #999;
 }
 
 .post-detail-desc{
+  display: flex;
+  flex-direction: column;
+  align-items: start;
   height: 600px;
-  border: 1px solid #333;
+  padding: 30px;
+  border: 1px solid #999;
   border-radius: 5px;
 }
 
 .detail-btns {
   text-align: right;
+}
+
+.chat-btn {
+  margin-right: 8px;
+}
+
+.post_flex_wrap {
+  display: flex;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.post_creator{
+  text-align: left;
+}
+.post_first_date {
+  font-size: 12px;
+  margin-left: 20px;
+}
+
+.update_date {
+  font-size: 12px;
+  margin-right: 30px;
 }

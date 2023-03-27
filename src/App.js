@@ -32,6 +32,7 @@ function App() {
 
   return (
     <div className="App">
+      <div id="app_wrap">
       <Navi></Navi>
 
       <GoogleOAuthProvider
@@ -61,10 +62,11 @@ function App() {
         </Routes>
       </GoogleOAuthProvider>
 
-      <footer className="py-3 my-4">
+      <footer className="footer">
         <hr />
-        <p className="text-center text-muted">© 2022 Company, Inc</p>
+        <p className="text-center text-muted">© 2023 Life Better, Idea Connection</p>
       </footer>
+      </div>
     </div>
   );
 }
