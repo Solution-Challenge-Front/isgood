@@ -1,24 +1,54 @@
 import React, { useState, useEffect } from "react";
+import axios from "axios";
+import { getCookie } from "../../util/Cookie";
+import { useLocation, useNavigate } from "react-router-dom";
 import "./chatlist.css";
 
 function ChatList() {
-  const rooms = [
-    { name: "Room 1" ,nickname: '병주' },
-    { name: "Room 2", nickname: "진우"},
-    
-  ];
+  let navigate = useNavigate();
+  const [rooms, setRooms] = useState([]);
+  useEffect(() => {
+    axios
+      .get(`${process.env.REACT_APP_API_KEY}/httpchat/list`, {
+        //jwt만 필요함
+        headers: {
+          Authorization: getCookie("token"),
+        },
+      })
+
+      .then((result) => {
+        console.log(result.data.room_data);
+        let copy = [...result.data.room_data];
+        setRooms(copy);
+
+        //roomname, nickname 주기로함
+      })
+      .catch((err) => {
+        console.log("실패");
+      });
+  }, []);
 
   return (
     <div className="chat-room-list">
-      {rooms.map((room) => (
-        <div className="chat-room-item" key={room.name}>
-          <div className="chat-room-icon">{room.name.charAt(0)}</div>
+      {rooms.map((room, i) => (
+        <div
+          onClick={() => {
+            navigate("/chat", {
+              state: {
+                roomname: rooms[i].roomname,
+                nickname: rooms[i].nickname,
+                id: rooms[i].id,
+              },
+            });
+          }}
+          className="chat-room-item"
+          key={room.name}
+        >
+          <div className="chat-room-icon">R</div>
           <div className="chat-room-details">
-            <div className="chat-room-name">{room.name}</div>
+            <div className="chat-room-name">Room {i}</div>
             <div className="chat-room-meta">
-              <div className="chat-room-nickname">
-                {room.nickname}
-              </div>
+              <div className="chat-room-nickname">{rooms[i].nickname}</div>
             </div>
           </div>
         </div>

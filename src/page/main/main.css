@@ -1,6 +1,8 @@
 .main-wrap {
 }
-
+.view-chat{
+  float: right;
+}
 .main-wrap .main-wrap-header {
   text-align: left;
   margin-top: 80px;

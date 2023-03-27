@@ -16,6 +16,7 @@ function MainPage() {
               <h5 className='main-wrap-header'>
                 idea Connection
               </h5>
+             
               <h1 className='main-wrap-headline'>
                 Anyone can<br/> implement an<br/> idea
               </h1>
@@ -29,6 +30,7 @@ function MainPage() {
             {/* main img */}
             <div className="col-md-4">
               <div className='main-img'>
+              
               </div>
             </div>
             {/* main img end */}
