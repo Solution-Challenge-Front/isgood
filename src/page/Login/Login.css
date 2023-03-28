@@ -13,10 +13,15 @@
     box-shadow: 1px 1px 5px 1px #dadce0 ;
 }
 
+.form-control{
+    width: 300px;
+}
+
 .login_panel{
     display: flex;
     flex-direction: column;
     margin-top: 15px;
+    justify-content: center;
 }
 
 .login_panel > div > div >input{
@@ -26,6 +31,16 @@
 
 .Login_button{
     width: 20%;
-    margin-left: 40%;
     margin-bottom: 15px;
+}
+
+.googlebtn{
+    margin-bottom: 10px;
+}
+
+.btn_box{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
