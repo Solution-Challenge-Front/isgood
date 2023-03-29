@@ -84,11 +84,7 @@ function PostCreate() {
   } else {
     navigate('/login')
     alert('로그인을 해주세요')
-    return(
-    <>
-    </>
-    );
-    
+    return null;
   }
 }
 
