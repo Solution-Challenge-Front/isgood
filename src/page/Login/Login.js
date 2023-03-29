@@ -21,7 +21,7 @@ function Login() {
         onSuccess: (codeResponse) => {
             console.log(codeResponse.code)
             set_d(codeResponse.code);
-            axios.post('http://35.216.65.169:8080/auth/gauth',{
+            axios.post(`${process.env.REACT_APP_API_KEY}/auth/gauth`,{
                 code : codeResponse.code
             })
             .then((result) => {
@@ -75,37 +75,39 @@ function Login() {
                             }} />
                         </Col>
                     </Form.Group>
+                   <div className='btn_box'>
                     <Button variant="secondary" className='Login_button'
-                        onClick={() => {
-                            axios.post(`${process.env.REACT_APP_API_KEY}/auth/login`, {
-                                id: id,
-                                pw: password
-                            })
-                                .then((result) => {
-                                    const statusCode = result.status;   
-                                    if (statusCode === 201) {
-                                        setCookie("token", result.data.jwt, {
-                                            path: "/",
-                                        })  
-                                        navigate('/')
-                                    }
+                            onClick={() => {
+                                axios.post(`${process.env.REACT_APP_API_KEY}/auth/login`, {
+                                    id: id,
+                                    pw: password
                                 })
-                                .catch((err) => {
-                                    const statusCode = err.status;
+                                    .then((result) => {
+                                        const statusCode = result.status;   
+                                        if (statusCode === 201) {
+                                            setCookie("token", result.data.jwt, {
+                                                path: "/",
+                                            })  
+                                            navigate('/')
+                                        }
+                                    })
+                                    .catch((err) => {
+                                        const statusCode = err.status;
 
-                                    if (statusCode === 401) {
-                                        alert("ID 또는 비밀번호가 일치하지 않음")
-                                    } else if (statusCode === 500) {
-                                        navigate('/login')
-                                    }
-                                })
-                        }}
-                    >
-                        Login
-                    </Button>
-                    <GoogleButton onClick={() => {googleSocialLogin();
-                    
-                    }} />
+                                        if (statusCode === 401) {
+                                            alert("ID 또는 비밀번호가 일치하지 않음")
+                                        } else if (statusCode === 500) {
+                                            navigate('/login')
+                                        }
+                                    })
+                            }}
+                        >
+                            Login
+                        </Button>
+                        <GoogleButton className='googlebtn' onClick={() => {googleSocialLogin();
+                        
+                        }} />
+                   </div>
 
                 </Container>
                 
