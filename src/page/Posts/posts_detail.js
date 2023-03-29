@@ -64,7 +64,12 @@ function PostDetail() {
       <div className="container">
         <div className="row">
           <div className="col-12">
-            <button
+            
+
+            <h2 className="post-detail-title mt-5">{idea.title}</h2>
+            <div className="post-detail-desc mt-3">{idea.introduce}</div>
+            <div className="detail-btns mb-2 mt-3">
+            <Button variant="primary chat-btn" size="lg"
               onClick={() => {
                 // 1대1일 채팅 부분
                 axios
@@ -108,11 +113,7 @@ function PostDetail() {
               }}
             >
               1:1채팅
-            </button>
-
-            <h2 className="post-detail-title mt-5">{idea.title}</h2>
-            <div className="post-detail-desc mt-3">{idea.introduce}</div>
-            <div className="detail-btns mb-2 mt-3">
+            </Button>
               <Button
                 variant="primary"
                 size="lg"
@@ -122,6 +123,7 @@ function PostDetail() {
               >
                 수정하기
               </Button>{" "}
+              
               <Button
                 variant="secondary"
                 size="lg"
