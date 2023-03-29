@@ -157,6 +157,12 @@
   margin-bottom: 20px;
 }
 
+.tuto_btn{
+  width: 500px;
+  display: flex;
+  justify-content: space-between;
+}
+
 .tuto1.t0 {
 }
 

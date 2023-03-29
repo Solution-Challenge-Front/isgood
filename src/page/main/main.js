@@ -2,8 +2,8 @@ import "./main.css";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { getCookie, removeCookie } from "../../util/Cookie.js";
-import Carousel from "react-bootstrap/Carousel";
-
+import ArrowIcon from "../../util/arrow/arrow";
+import ArrowIcon2 from "../../util/arrow/arrow2";
 function MainPage() {
   let [state, set_state] = useState();
   let [tuto, set_tuto] = useState(0);
@@ -13,6 +13,7 @@ function MainPage() {
     return (
       <>
         <div className="container">
+          
           <div className={"tuto" + " " + state}>
             <div className="tuto_container">
               <div className={"tuto1" + " " + "t" + tuto}>
@@ -29,24 +30,24 @@ function MainPage() {
               </div>
             </div>
             <div className="tuto_btn">
-              <button
+              <div
                 className="main-btns-join"
                 onClick={() => {
                   tuto == 0 ? set_tuto(0) : set_tuto(tuto - 1);
                 }}
               >
                 {" "}
-                이전{" "}
-              </button>
-              <button
+                <ArrowIcon ></ArrowIcon>{" "}
+              </div>
+              <div
                 className="main-btns-join"
                 onClick={() => {
                   tuto == 2 ? set_tuto(2) : set_tuto(tuto + 1);
                 }}
               >
                 {" "}
-                다음{" "}
-              </button>
+                <ArrowIcon2 ></ArrowIcon2>{" "}
+              </div>
             </div>
             <button
               className="main-btns-join"
@@ -141,6 +142,7 @@ function MainPage() {
   return (
     <>
       <div className="container main">
+      
         <div className="row main-wrap">
           {/* main desc left */}
           <div className="col-md-6">
