@@ -42,7 +42,6 @@ function Chat(props) {
     socket.on("join", (data) => {});
 
     socket.on("response", (response) => {
-      console.log(response);
       setNick(response.nickname);
       setId(response.id); //닉네임 , 아이디 받기
     });

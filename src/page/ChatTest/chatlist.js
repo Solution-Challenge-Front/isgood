@@ -17,7 +17,6 @@ function ChatList() {
       })
 
       .then((result) => {
-        console.log(result.data.room_data);
         let copy = [...result.data.room_data];
         setRooms(copy);
 
@@ -36,7 +35,7 @@ function ChatList() {
             navigate("/chat", {
               state: {
                 roomname: rooms[i].roomname,
-                nickname: rooms[i].nickname,
+
                 id: rooms[i].id,
               },
             });

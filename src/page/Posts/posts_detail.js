@@ -39,7 +39,6 @@ function PostDetail() {
           if (statusCode === 201) {
             const ideas = result.data.data;
             setIdea(ideas);
-            console.log(ideas);
           }
         })
         .catch((err) => {
@@ -80,8 +79,6 @@ function PostDetail() {
                     }
                   )
                   .then((result) => {
-                    console.log(result.data);
-
                     navigate("/chat", {
                       state: {
                         roomname: result.data.roomname,
