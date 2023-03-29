@@ -22,9 +22,7 @@ function ChatList() {
 
         //roomname, nickname 주기로함
       })
-      .catch((err) => {
-        console.log("실패");
-      });
+      .catch((err) => {});
   }, []);
 
   return (
