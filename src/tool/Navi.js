@@ -28,7 +28,7 @@ function Navi() {
               >
                 Logout
               </Nav.Link>
-              <Nav.Link href="/profileedit">profile</Nav.Link>
+              <Nav.Link href="/profile">My page</Nav.Link>
               <Nav.Link
                 onClick={() => {
                   navigate("/chatlist");

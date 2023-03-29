@@ -10,12 +10,9 @@ function PostCreate() {
   let [introduce, setIntroduce] = useState('');
   let [desc, setDesc] = useState('');
   let navigate = useNavigate();
-  const [isLogin, setIsLogin] = useState(false);
   const token = getCookie('token');
 
-
   if (token) {
-    setIsLogin(true);
     return (
       <>
         <div className="container">
@@ -59,7 +56,7 @@ function PostCreate() {
                       .then((result) => {
                         const statusCode = result.status
                         if (statusCode === 201) {
-                          alert(result.data.message);
+                          alert("작성이 완료되었습니다.");
                           navigate('/idea_list')
                         }
                       }).catch((err) => {
@@ -73,12 +70,11 @@ function PostCreate() {
                         }
                       })
                   }}
-                />{' '}
+                />
               </Form>
             </div>
           </div>
         </div>
-
       </>
     )
   } else {

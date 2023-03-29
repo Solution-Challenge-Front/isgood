@@ -14,8 +14,6 @@ function PostDetail() {
 
   const id = location.state.id;
 
-  const jwtToken = getCookie("token");
-
   // 게시글열기
   useEffect(() => {
     const token = getCookie("token");
