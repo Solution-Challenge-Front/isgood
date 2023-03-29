@@ -21,7 +21,7 @@ function Login() {
         onSuccess: (codeResponse) => {
             console.log(codeResponse.code)
             set_d(codeResponse.code);
-            axios.post('http://35.216.65.169:8080/auth/gauth',{
+            axios.post(`${process.env.REACT_APP_API_KEY}/auth/gauth`,{
                 code : codeResponse.code
             })
             .then((result) => {
