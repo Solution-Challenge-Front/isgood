@@ -16,7 +16,6 @@ function Navi() {
             <Nav>
               <Nav.Link href="/introduce">Introduce</Nav.Link>
               <Nav.Link href="/idea_list">Idea</Nav.Link>
-              <Nav.Link href="#">Menu3</Nav.Link>
             </Nav>
             <Nav>
               <Nav.Link
@@ -57,11 +56,10 @@ function Navi() {
             >
               Idea
             </Nav.Link>
-            <Nav.Link href="#">Menu3</Nav.Link>
           </Nav>
           <Nav>
             <Nav.Link href="/login">Login</Nav.Link>
-            <Nav.Link href="/signupselect">Sing up</Nav.Link>
+            <Nav.Link href="/signupselect">Sign up</Nav.Link>
           </Nav>
         </Container>
       </Navbar>
