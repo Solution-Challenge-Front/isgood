@@ -64,7 +64,8 @@ function PostDetail() {
             
 
             <h2 className="post-detail-title mt-5">{idea.title}</h2>
-            <div className="post-detail-desc mt-3">{idea.introduce}</div>
+            <div className="post-detail-desc mt-3">{idea.introduce}</div> 
+            <div className="post-detail-desc mt-3">{idea.text}</div>
             <div className="detail-btns mb-2 mt-3">
             <Button variant="primary chat-btn" size="lg"
               onClick={() => {
