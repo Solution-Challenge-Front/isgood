@@ -140,7 +140,7 @@ function Signup_content(){
 
 function Gsignup_content(user){
     console.log(user.user.g_user_info.mail)
-    let navigate = useNavigate
+    let navigate = useNavigate('');
     let[nickname, get_nickname] = useState('');
     let[id, get_id] = useState('');
     let [password, get_password] = useState('');
