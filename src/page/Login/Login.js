@@ -14,7 +14,7 @@ import GoogleButton from 'react-google-button';
 import { set_name, set_mail } from '../../store';
 
 function Login() {
-    let dispatch = useDispatch()
+    let dispatch = useDispatch();
     let navigate = useNavigate();
     let [d, set_d] = useState([]);
     const googleSocialLogin = useGoogleLogin({

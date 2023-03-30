@@ -39,7 +39,7 @@ function App() {
         clientId={`${process.env.REACT_APP_GOOGLE_CLIENT_ID}`}
       >
         <Routes>
-          <Route path="/" element={<MainPage />} />
+          <Route path="/" element={<MainPage/>} />
           <Route path="/introduce" element={<Introduce />} />
           <Route path="/signupselect" element={<SignupSelect />} />
           <Route path="/signup1" element={<Signup1 />} />

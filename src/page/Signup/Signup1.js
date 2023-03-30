@@ -38,7 +38,7 @@ function Signup1(){
 export default Signup1;
 
 function Signup_content(){
-    let navigate = useNavigate
+    let navigate = useNavigate();
     let[nickname, get_nickname] = useState('');
     let[id, get_id] = useState('');
     let [password, get_password] = useState('');
